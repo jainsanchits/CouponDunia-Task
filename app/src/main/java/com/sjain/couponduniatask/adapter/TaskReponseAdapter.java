@@ -83,10 +83,15 @@ public class TaskReponseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             ViewHolder holderGen = (ViewHolder) holder;
             ItemTask currentData = mItemTaskList.get(position);
             //    holderGen.ivTaskImage.setImageURI(Uri.parse(currentData.getIcon()));
-            holderGen.tvTaskText.setText(currentData.getName());
+            if (currentData.getName() != null && !currentData.getName().equals("")) {
+                holderGen.tvTaskText.setText(currentData.getName());
+            } else {
+                holderGen.tvTaskText.setText("--");
+            }
             Picasso.with(mContext)
                     .load(currentData.getIcon())
                     .placeholder(R.mipmap.ic_launcher_round)
+                    .error(R.mipmap.ic_launcher_round)
                     .into(holderGen.ivTaskImage);
 
         } else if (holder instanceof TaskReponseAdapter.LoadingViewHolder) {
