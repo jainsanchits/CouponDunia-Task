@@ -16,7 +16,7 @@
             android:layout_height="100dp"
             android:layout_weight="1"
             android:padding="8dp"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@mipmap/ic_launcher_round" />
 
         <TextView
             android:id="@+id/tv_task_text"
